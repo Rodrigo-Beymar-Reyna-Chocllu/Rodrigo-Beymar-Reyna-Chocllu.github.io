@@ -1,62 +1,51 @@
-<!doctype html>
+<!doctype html> 
 <html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Rodrigo Beymar Reyna Chocllu — Presentación</title>
+  <meta name="description" content="Rodrigo Beymar Reyna Chocllu — Estudiante de Ciencias de la Computación. Página de presentación personal para la materia Técnicas de Estudio y Desarrollo de Habilidades Comunicativas." />
+  <title>Rodrigo Beymar — Presentación</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="hero">
-    <div class="hero-content">
-      <img src="PHOTO.jpg" alt="Foto de perfil de Rodrigo Beymar Reyna Chocllu" class="profile-pic">
-      <h1>Rodrigo Beymar Reyna Chocllu</h1>
-      <p>Estudiante — Ciencias de la Computación</p>
-      <a href="mailto:rodrigo.beymar.reyna.chocllu@gmail.com" class="btn">Contactar</a>
+  <header class="hero" id="home" role="banner" aria-label="Presentación">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero-content reveal">
+        <img src="PHOTO.jpg" alt="Foto de perfil de Rodrigo Beymar Reyna Chocllu" class="profile-photo" width="140" height="140">
+        <div class="hero-text">
+          <h1>Rodrigo Beymar Reyna Chocllu</h1>
+          <p class="subtitle">Estudiante — Ciencias de la Computación</p>
+          <p class="lead">Hola — soy Rodrigo. Esta página es una presentación personal creada para la materia Técnicas de Estudio y Desarrollo de Habilidades Comunicativas.</p>
+          <p class="contact"><a class="btn" href="mailto:rodrigo.beymar.reyna.chocllu@gmail.com">Contactar</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="logos">
+      <img src="CIC_LOGO.png" alt="Logo CIC - Ingeniería en Ciencias de la Computación" class="mini-logo">
+      <img src="UNIV_LOGO.png" alt="Logo Universidad Mayor Real y Pontificia de San Francisco Xavier de Chuquisaca" class="mini-logo univ">
     </div>
   </header>
 
   <main>
-    <section class="card reveal">
-      <h2>Perfil / Estudios</h2>
-      <p>Egresado de secundaria — Bachiller en Humanidades.</p>
-      <p>Escuela: Mariscal Sucre B</p>
-      <p>Cursos de robótica en Instituto Tecnológico Boliviano-Alemán</p>
-    </section>
-
-    <section class="card reveal">
-      <h2>Datos personales</h2>
-      <p><strong>Dirección:</strong> Adolfo Costa Du Rels #62</p>
-      <p><strong>Correo:</strong> rodrigo.beymar.reyna.chocllu@gmail.com</p>
-      <p><strong>Tutor:</strong> Martha Chocllu Mamani</p>
-    </section>
-
-    <section class="card reveal">
-      <h2>Origen y Logros</h2>
-      <p>Nací y soy de la ciudad de Sucre, Bolivia.</p>
-      <p>Primer lugar en Olimpiadas de Geografía.</p>
-      <p>Cursos de robótica (participación).</p>
-    </section>
-
-    <section class="card reveal">
-      <h2>Motivación</h2>
-      <p>
-      Elegí la carrera de Ciencias de la Computación porque me interesa el desarrollo de software: 
-      la idea de programar y crear soluciones me resulta atractiva y quiero aprender a hacerlo; además veo 
-      que hay buenas oportunidades laborales en el área. Desde chico me llamó la atención cómo funcionaban 
-      las cosas y por qué funcionaban, y esa curiosidad hizo que las placas electrónicas y los componentes 
-      me llamaran la atención desde temprano; entender cómo están conectadas las piezas y cómo se comunican 
-      entre sí me parece interesante. Me gusta la parte práctica: desmontar para ver conexiones, entender 
-      el funcionamiento interno de dispositivos y probar a que vuelvan a funcionar; además, al tomar cursos 
-      de robótica fui consolidando ese gusto por la tecnología y por la unión entre hardware y software. 
-      No soy experto en programación todavía, pero quiero construir una base sólida en programación y sistemas 
-      embebidos; mi objetivo inmediato es aprender con práctica y mejorar día a día.
-      </p>
+    <section class="presentation reveal" id="presentation" aria-labelledby="presentation-title">
+      <div class="container">
+        <h2 id="presentation-title">Presentación personal</h2>
+        <p>Me llamo Rodrigo Beymar Reyna Chocllu. Soy estudiante de la carrera de Ingeniería en Ciencias de la Computación en la Universidad Mayor Real y Pontificia de San Francisco Xavier de Chuquisaca. Esta página es una breve presentación personal para la materia y fue diseñada para verse correctamente en pantallas de laptop/PC y proyectores.</p>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>Materia: Técnicas de estudio y desarrollo de habilidades comunicativas</p>
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <small>&copy; 2026 Rodrigo Beymar Reyna Chocllu — Presentación personal</small>
+      </div>
+      <div class="footer-right">
+        <img src="UNIV_LOGO.png" alt="Logo Universidad" class="footer-logo">
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
