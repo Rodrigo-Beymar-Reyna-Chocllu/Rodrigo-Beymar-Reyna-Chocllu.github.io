@@ -7,263 +7,388 @@
   <title>Rodrigo Beymar Reyna Chocllu — Presentación Personal</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:ital,wght@0,300;0,400;0,600;0,700;1,300&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- CANVAS para partículas animadas -->
   <canvas id="particles-canvas"></canvas>
 
-  <!-- ============ HERO ============ -->
-  <header class="hero" id="top">
-    <div class="hero__circuit-overlay"></div>
-    <div class="hero__glow-left"></div>
-    <div class="hero__glow-right"></div>
+  <!-- ══════════════════ HERO ══════════════════ -->
+  <header class="hero">
+    <div class="hero__grid-overlay"></div>
+    <div class="hero__glow-l"></div>
+    <div class="hero__glow-r"></div>
 
-    <div class="hero__inner">
-      <!-- Logos arriba -->
-      <div class="hero__logos">
-        <img src="UNIV_LOGO.png" alt="Logo Universidad Mayor Real y Pontificia de San Francisco Xavier de Chuquisaca" class="hero__logo hero__logo--univ" />
-        <img src="CIC_LOGO.png" alt="Logo CIC — Ingeniería en Ciencias de la Computación" class="hero__logo hero__logo--cic" />
-      </div>
-
-      <!-- Contenido central -->
-      <div class="hero__content">
-        <div class="hero__photo-wrap">
-          <img src="PHOTO.jpg" alt="Foto de perfil de Rodrigo Beymar Reyna Chocllu" class="hero__photo" />
-          <div class="hero__photo-ring"></div>
-          <div class="hero__photo-scan"></div>
-        </div>
-
-        <div class="hero__text">
-          <p class="hero__eyebrow"><span class="dot"></span> Presentación Personal <span class="dot"></span></p>
-          <h1 class="hero__name">Rodrigo Beymar<br /><span class="hero__name--accent">Reyna Chocllu</span></h1>
-          <p class="hero__subtitle">Estudiante — Ingeniería en Ciencias de la Computación</p>
-          <a href="mailto:rodrigo.beymar.reyna.chocllu@gmail.com" class="hero__cta">
-            <span class="cta__icon">✉</span> Contactar
-          </a>
-        </div>
-      </div>
-
-      <!-- Scroll indicator -->
-      <div class="hero__scroll">
-        <span>Scroll</span>
-        <div class="hero__scroll-line"></div>
-      </div>
+    <!-- LOGOS: universidad izquierda / CIC derecha -->
+    <div class="hero__topbar">
+      <img src="UNIV_LOGO.jpg"
+           alt="Universidad Mayor Real y Pontificia de San Francisco Xavier de Chuquisaca"
+           class="topbar-logo topbar-logo--univ" />
+      <img src="CIC_LOGO.png"
+           alt="CIC — Ingeniería en Ciencias de la Computación"
+           class="topbar-logo topbar-logo--cic" />
     </div>
+
+    <!-- CUERPO HERO: izquierda = foto+nombre / derecha = decoración -->
+    <div class="hero__body">
+
+      <div class="hero__left">
+        <div class="hero__photowrap">
+          <div class="hero__photoframe">
+            <img src="PHOTO.jpg"
+                 alt="Foto de perfil de Rodrigo Beymar Reyna Chocllu"
+                 class="hero__photo" />
+          </div>
+          <div class="hero__ring"></div>
+          <div class="hero__scan"></div>
+        </div>
+
+        <div class="hero__textblock">
+          <p class="hero__eyebrow">
+            <span class="e-dot"></span>
+            Presentación Personal
+            <span class="e-dot"></span>
+          </p>
+          <h1 class="hero__name">
+            Rodrigo Beymar<br />
+            <em class="hero__name-accent">Reyna Chocllu</em>
+          </h1>
+          <p class="hero__subtitle">
+            Estudiante &mdash; Ingeniería en Ciencias de la Computación
+          </p>
+        </div>
+      </div>
+
+      <div class="hero__right" aria-hidden="true">
+        <img src="TECH_LAPTOP.jpg" alt="" class="hero__decoimg" />
+        <div class="hero__decofade"></div>
+      </div>
+
+    </div><!-- /hero__body -->
   </header>
 
-  <!-- ============ MAIN CONTENT ============ -->
+  <!-- ══════════════════ MAIN ══════════════════ -->
   <main>
 
-    <!-- 1. DATOS PERSONALES -->
-    <section class="cv-section" id="datos-personales">
-      <div class="section-inner">
-        <div class="section-label">01</div>
-        <h2 class="section-title">Datos Personales</h2>
-        <div class="section-line"></div>
-        <div class="card card--grid">
-          <div class="card__item reveal">
-            <span class="card__icon">📍</span>
-            <div>
-              <p class="card__label">Dirección</p>
-              <p class="card__value">Adolfo Costa Du Rels #62, Sucre, Bolivia</p>
+    <!-- ══ 01 DATOS PERSONALES ══ -->
+    <section class="cv-sec" id="datos-personales">
+      <div class="inner">
+        <span class="sec-num">01</span>
+        <h2 class="sec-title">Datos Personales <span class="sec-sub">(con foto)</span></h2>
+        <div class="sec-line"></div>
+
+        <div class="datos-layout">
+
+          <!-- foto carnet -->
+          <div class="datos-photo-col reveal">
+            <div class="datos-photoframe">
+              <img src="PHOTO.jpg"
+                   alt="Fotografía del estudiante Rodrigo Beymar Reyna Chocllu"
+                   class="datos-photo" />
             </div>
           </div>
-          <div class="card__item reveal">
-            <span class="card__icon">✉</span>
-            <div>
-              <p class="card__label">Correo Electrónico</p>
-              <p class="card__value">rodrigo.beymar.reyna.chocllu@gmail.com</p>
+
+          <!-- lista de datos en columna -->
+          <div class="datos-list">
+
+            <div class="dato reveal">
+              <span class="dato-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </span>
+              <div>
+                <p class="dato-label">Nombre completo</p>
+                <p class="dato-val">Rodrigo Beymar Reyna Chocllu</p>
+              </div>
             </div>
-          </div>
-          <div class="card__item reveal">
-            <span class="card__icon">🎓</span>
-            <div>
-              <p class="card__label">Tutor / Docente</p>
-              <p class="card__value">Martha Chocllu Mamani</p>
+
+            <div class="dato reveal">
+              <span class="dato-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+              </span>
+              <div>
+                <p class="dato-label">Sexo</p>
+                <p class="dato-val">Masculino</p>
+              </div>
             </div>
-          </div>
-          <div class="card__item reveal">
-            <span class="card__icon">🌐</span>
-            <div>
-              <p class="card__label">Ciudad de Origen</p>
-              <p class="card__value">Sucre, Bolivia</p>
+
+            <div class="dato reveal">
+              <span class="dato-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <div>
+                <p class="dato-label">Dirección</p>
+                <p class="dato-val">Adolfo Costa Du Rels #62</p>
+              </div>
             </div>
-          </div>
-        </div>
+
+            <div class="dato reveal">
+              <span class="dato-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </span>
+              <div>
+                <p class="dato-label">Correo electrónico</p>
+                <p class="dato-val dato-val--email">rodrigo.beymar.reyna.chocllu@gmail.com</p>
+              </div>
+            </div>
+
+            <div class="dato reveal">
+              <span class="dato-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </span>
+              <div>
+                <p class="dato-label">Tutor (madre)</p>
+                <p class="dato-val">Martha Chocllu Mamani</p>
+              </div>
+            </div>
+
+          </div><!-- /datos-list -->
+        </div><!-- /datos-layout -->
       </div>
     </section>
 
-    <!-- 2. FORMACIÓN ACADÉMICA -->
-    <section class="cv-section cv-section--alt" id="formacion">
-      <div class="section-inner">
-        <div class="section-label">02</div>
-        <h2 class="section-title">Formación Académica</h2>
-        <div class="section-line"></div>
+    <!-- ══ 02 FORMACIÓN ACADÉMICA ══ -->
+    <section class="cv-sec cv-sec--alt" id="formacion">
+      <div class="inner">
+        <span class="sec-num">02</span>
+        <h2 class="sec-title">Formación Académica</h2>
+        <div class="sec-line"></div>
 
         <div class="timeline">
-          <div class="timeline__item reveal">
-            <div class="timeline__dot"></div>
-            <div class="timeline__card">
-              <span class="timeline__badge">Secundaria</span>
-              <h3 class="timeline__title">Diploma de Bachiller en Humanidades</h3>
-              <p class="timeline__place">Unidad Educativa Mariscal Sucre B</p>
-              <p class="timeline__desc">Egresado con diploma de bachiller. Formación integral en humanidades con orientación al conocimiento científico y tecnológico.</p>
+
+          <div class="tl-item reveal">
+            <div class="tl-dot"></div>
+            <div class="tl-card">
+              <span class="tl-badge">Secundaria — Egresado</span>
+              <h3 class="tl-title">Diploma de Bachiller en Humanidades</h3>
+              <p class="tl-place">Unidad Educativa Mariscal Sucre B</p>
+              <p class="tl-desc">Formación integral en Humanidades. Egresado con Diploma de Bachiller en Humanidades.</p>
             </div>
           </div>
 
-          <div class="timeline__item reveal">
-            <div class="timeline__dot"></div>
-            <div class="timeline__card">
-              <span class="timeline__badge">Universidad</span>
-              <h3 class="timeline__title">Ingeniería en Ciencias de la Computación</h3>
-              <p class="timeline__place">Universidad Mayor Real y Pontificia de San Francisco Xavier de Chuquisaca</p>
-              <p class="timeline__desc">Actualmente cursando el primer año de la carrera. Materia: Técnicas de Estudio y Desarrollo de Habilidades Comunicativas (SHC 100).</p>
+          <div class="tl-item reveal">
+            <div class="tl-dot tl-dot--on"></div>
+            <div class="tl-card tl-card--on">
+              <span class="tl-badge tl-badge--on">Universidad — En curso</span>
+              <h3 class="tl-title">Ingeniería en Ciencias de la Computación</h3>
+              <p class="tl-place">Universidad Mayor Real y Pontificia de San Francisco Xavier de Chuquisaca</p>
+              <p class="tl-desc">Actualmente cursando el primer año. Materia: Técnicas de Estudio y Desarrollo de Habilidades Comunicativas (SHC 100). Docente: Ing. Álvaro Calvimontes Cano.</p>
             </div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- 3. IDIOMAS -->
-    <section class="cv-section" id="idiomas">
-      <div class="section-inner">
-        <div class="section-label">03</div>
-        <h2 class="section-title">Idiomas</h2>
-        <div class="section-line"></div>
+    <!-- ══ 03 IDIOMAS ══ -->
+    <section class="cv-sec" id="idiomas">
+      <div class="inner inner--sidebyside">
 
-        <div class="lang-grid">
-          <div class="lang-card reveal">
-            <div class="lang-flag">🇧🇴</div>
-            <h3 class="lang-name">Español</h3>
-            <p class="lang-level">Nativo</p>
-            <div class="lang-bar">
-              <div class="lang-bar__fill" style="--pct: 100%"></div>
+        <div class="side-content">
+          <span class="sec-num">03</span>
+          <h2 class="sec-title">Idiomas</h2>
+          <div class="sec-line"></div>
+
+          <div class="lang-list">
+
+            <div class="lang-item reveal">
+              <div class="lang-row">
+                <span class="lang-name">Español</span>
+                <span class="lang-tag">Nativo</span>
+              </div>
+              <div class="lang-track">
+                <div class="lang-fill" data-w="100"></div>
+              </div>
             </div>
-          </div>
-          <div class="lang-card reveal">
-            <div class="lang-flag">🇺🇸</div>
-            <h3 class="lang-name">Inglés</h3>
-            <p class="lang-level">Nivel Básico</p>
-            <div class="lang-bar">
-              <div class="lang-bar__fill" style="--pct: 25%"></div>
+
+            <div class="lang-item reveal">
+              <div class="lang-row">
+                <span class="lang-name">Inglés</span>
+                <span class="lang-tag lang-tag--bas">Nivel básico</span>
+              </div>
+              <div class="lang-track">
+                <div class="lang-fill" data-w="20"></div>
+              </div>
             </div>
+
+          </div>
+        </div>
+
+        <div class="side-deco reveal" aria-hidden="true">
+          <img src="TECH_TREE.webp" alt="" class="side-img" />
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══ 04 EXPERIENCIA PROFESIONAL ══ -->
+    <section class="cv-sec cv-sec--alt" id="experiencia">
+      <div class="inner">
+        <span class="sec-num">04</span>
+        <h2 class="sec-title">Experiencia Profesional</h2>
+        <div class="sec-line"></div>
+
+        <div class="infoblock reveal">
+          <div class="infoblock__ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div class="infoblock__body">
+            <p class="infoblock__main">Actualmente sin experiencia profesional formal.</p>
+            <p class="infoblock__detail">Poseo experiencia práctica doméstica en reparación básica de equipos electrónicos, conexiones y soldadura a nivel básico, realizada en el entorno familiar.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 4. EXPERIENCIA PROFESIONAL -->
-    <section class="cv-section cv-section--alt" id="experiencia">
-      <div class="section-inner">
-        <div class="section-label">04</div>
-        <h2 class="section-title">Experiencia Profesional</h2>
-        <div class="section-line"></div>
+    <!-- ══ 05 OTROS CURSOS Y SEMINARIOS ══ -->
+    <section class="cv-sec" id="cursos">
+      <div class="inner inner--sidebyside inner--rev">
 
-        <div class="info-card reveal">
-          <div class="info-card__icon">💡</div>
-          <div class="info-card__text">
-            <p>Actualmente soy estudiante universitario de primer año. Mi experiencia práctica se orienta al aprendizaje autónomo: desmontaje y análisis de dispositivos electrónicos, exploración de placas y componentes, y práctica autodidacta con tecnología.</p>
-          </div>
+        <div class="side-deco side-deco--laptop reveal" aria-hidden="true">
+          <img src="TECH_LAPTOP.jpg" alt="" class="side-img side-img--rounded" />
         </div>
-      </div>
-    </section>
 
-    <!-- 5. OTROS CURSOS Y SEMINARIOS -->
-    <section class="cv-section" id="cursos">
-      <div class="section-inner">
-        <div class="section-label">05</div>
-        <h2 class="section-title">Otros Cursos y Seminarios</h2>
-        <div class="section-line"></div>
+        <div class="side-content">
+          <span class="sec-num">05</span>
+          <h2 class="sec-title">Otros Cursos y Seminarios</h2>
+          <div class="sec-line"></div>
 
-        <div class="cards-row">
-          <div class="feature-card reveal">
-            <div class="feature-card__icon">🤖</div>
-            <h3 class="feature-card__title">Cursos de Robótica</h3>
-            <p class="feature-card__body">Instituto Tecnológico Boliviano-Alemán — Formación práctica en robótica, consolidando el vínculo entre hardware y software.</p>
-          </div>
-          <div class="feature-card reveal">
-            <div class="feature-card__icon">🏆</div>
-            <h3 class="feature-card__title">Olimpiadas de Geografía</h3>
-            <p class="feature-card__body">Primer lugar en Olimpiadas de Geografía — Reconocimiento académico por desempeño destacado a nivel competitivo.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. HABILIDADES Y COMPETENCIAS -->
-    <section class="cv-section cv-section--alt" id="habilidades">
-      <div class="section-inner">
-        <div class="section-label">06</div>
-        <h2 class="section-title">Habilidades y Competencias</h2>
-        <div class="section-line"></div>
-
-        <div class="skills-grid">
-          <div class="skill-chip reveal"><span>🔧</span> Electrónica básica</div>
-          <div class="skill-chip reveal"><span>💻</span> Robótica</div>
-          <div class="skill-chip reveal"><span>🔩</span> Hardware &amp; Componentes</div>
-          <div class="skill-chip reveal"><span>📐</span> Pensamiento lógico</div>
-          <div class="skill-chip reveal"><span>🌍</span> Geografía</div>
-          <div class="skill-chip reveal"><span>🛠</span> Curiosidad técnica</div>
-          <div class="skill-chip reveal"><span>📚</span> Aprendizaje autónomo</div>
-          <div class="skill-chip reveal"><span>🤝</span> Trabajo en equipo</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7. MOTIVACIÓN -->
-    <section class="cv-section" id="motivacion">
-      <div class="section-inner">
-        <div class="section-label">07</div>
-        <h2 class="section-title">Motivo por el que Elegí la Carrera</h2>
-        <div class="section-line"></div>
-
-        <blockquote class="motivation reveal">
-          <div class="motivation__quote-icon">"</div>
-          <p>Elegí la carrera de Ciencias de la Computación porque me interesa el desarrollo de software: la idea de programar y crear soluciones me resulta atractiva y quiero aprender a hacerlo; además veo que hay buenas oportunidades laborales en el área. Desde chico me llamó la atención cómo funcionaban las cosas y por qué funcionaban, y esa curiosidad hizo que las placas electrónicas y los componentes me llamaran la atención desde temprano; entender cómo están conectadas las piezas y cómo se comunican entre sí me parece interesante.</p>
-          <p>Me gusta la parte práctica: desmontar para ver conexiones, entender el funcionamiento interno de dispositivos y probar a que vuelvan a funcionar; además, al tomar cursos de robótica fui consolidando ese gusto por la tecnología y por la unión entre hardware y software. No soy experto en programación todavía, pero quiero construir una base sólida en programación y sistemas embebidos; mi objetivo inmediato es aprender con práctica y mejorar día a día.</p>
-        </blockquote>
-      </div>
-    </section>
-
-    <!-- 8. REFERENCIAS PERSONALES -->
-    <section class="cv-section cv-section--alt" id="referencias">
-      <div class="section-inner">
-        <div class="section-label">08</div>
-        <h2 class="section-title">Referencias Personales</h2>
-        <div class="section-line"></div>
-
-        <div class="cards-row">
-          <div class="ref-card reveal">
-            <div class="ref-card__avatar">M</div>
-            <div class="ref-card__info">
-              <h3 class="ref-card__name">Martha Chocllu Mamani</h3>
-              <p class="ref-card__role">Docente / Tutora</p>
-              <p class="ref-card__subject">Técnicas de Estudio y Desarrollo de Habilidades Comunicativas — SHC 100</p>
-              <p class="ref-card__institution">Universidad Mayor Real y Pontificia de San Francisco Xavier de Chuquisaca</p>
+          <div class="curso-card reveal">
+            <div class="curso-top">
+              <span class="curso-ico">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14M12 2v2M12 20v2M2 12H4M20 12h2"/></svg>
+              </span>
+              <div>
+                <h3 class="curso-title">Curso de Robótica</h3>
+                <p class="curso-inst">Instituto Tecnológico Boliviano-Alemán</p>
+              </div>
             </div>
+            <p class="curso-desc">En ese curso trabajamos con piezas tipo Lego para montar robots, instalamos ruedas y sensores, y realizamos programación básica para que los robots se movieran, detectaran obstáculos y cumplieran tareas sencillas. Fue un taller práctico que permitió comprender la relación entre la parte física y las instrucciones que la controlan.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 06 LOGROS ══ -->
+    <section class="cv-sec cv-sec--alt" id="logros">
+      <div class="inner">
+        <span class="sec-num">06</span>
+        <h2 class="sec-title">Logros</h2>
+        <div class="sec-line"></div>
+
+        <div class="logro-card reveal">
+          <div class="logro-medal">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="6"/>
+              <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+            </svg>
+          </div>
+          <div class="logro-body">
+            <p class="logro-rank">1.er Lugar</p>
+            <h3 class="logro-title">Olimpiadas de Geografía</h3>
+            <p class="logro-desc">Reconocimiento académico por desempeño destacado a nivel competitivo.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ══ 07 HABILIDADES Y COMPETENCIAS ══ -->
+    <section class="cv-sec" id="habilidades">
+      <div class="inner">
+        <span class="sec-num">07</span>
+        <h2 class="sec-title">Habilidades y Competencias</h2>
+        <div class="sec-line"></div>
+
+        <div class="hab-col">
+
+          <div class="hab-row reveal">
+            <span class="hab-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+            </span>
+            <p class="hab-text">Conocimiento básico de componentes de computadoras: identificación de las piezas principales y comprensión de su función.</p>
+          </div>
+
+          <div class="hab-row reveal">
+            <span class="hab-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </span>
+            <p class="hab-text">Habilidades prácticas elementales en montaje y verificación de hardware y comprobación de conexiones.</p>
+          </div>
+
+          <div class="hab-row reveal">
+            <span class="hab-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </span>
+            <p class="hab-text">Experiencia en reparaciones domésticas sencillas (cables, conexiones y soldadura a nivel básico).</p>
+          </div>
+
+          <div class="hab-row reveal">
+            <span class="hab-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </span>
+            <p class="hab-text">Manejo intermedio de Word y PowerPoint; Excel a nivel básico / intermedio.</p>
+          </div>
+
+          <div class="hab-row reveal">
+            <span class="hab-ico">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </span>
+            <p class="hab-text">Capacidad para aprender mediante la observación y la práctica, aplicando soluciones sencillas para diagnosticar fallos.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ 08 MOTIVO POR EL CUAL ESCOGÍ LA CARRERA ══ -->
+    <section class="cv-sec cv-sec--alt" id="motivacion">
+      <div class="inner">
+        <span class="sec-num">08</span>
+        <h2 class="sec-title">Motivo por el cual escogí la carrera</h2>
+        <div class="sec-line"></div>
+
+        <div class="motiv-block reveal">
+          <div class="motiv-qmark">&ldquo;</div>
+          <div class="motiv-text">
+            <p>Elegí la carrera de Ciencias de la Computación porque me llamó la atención el desarrollo de software y el hecho de entender cómo se le indica a una máquina lo que debe hacer. Desde muy chico me interesó ver cómo funcionaban los aparatos electrónicos y por qué a veces dejaban de funcionar. Cuando algún juguete o dispositivo se rompía, lo desarmaba para mirar por dentro; a veces bastaba revisar la pila o reconectar un cable para que volviera a andar. Esas experiencias pequeñas me enseñaron a observar y a probar alternativas sencillas para identificar problemas.</p>
+            <p>Con el tiempo, esta curiosidad se orientó hacia la robótica, y es así como me inscribí a unos cursos de robótica en el Instituto Tecnológico Boliviano-Alemán, donde armábamos robots con piezas parecidas a Lego, colocábamos ruedas y sensores, y luego los programábamos de forma básica para que hicieran tareas sencillas como moverse o detectar obstáculos. Ver cómo estos pequeños robots respondían a una instrucción me resultó muy interesante y me ayudó a entender que para que un sistema funcione se necesita tanto la parte física como la lógica que la controla.</p>
+            <p>No soy un programador avanzado aún; por eso mismo elegí estudiar la carrera de Ciencias de la Computación para aprender desde un principio, paso a paso. La carrera ofrece oportunidades laborales claras y variadas, y eso también influyó en mi decisión. Prefiero aprender haciendo proyectos pequeños y prácticos porque así los conceptos se vuelven más fáciles de entender. Los talleres prácticos y la robótica me dieron confianza y mostraron que con herramientas sencillas se pueden lograr resultados reales. Por todo esto, elegí estudiar la carrera de Ciencias de la Computación.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══ 09 REFERENCIAS PERSONALES ══ -->
+    <section class="cv-sec" id="referencias">
+      <div class="inner">
+        <span class="sec-num">09</span>
+        <h2 class="sec-title">Referencias Personales</h2>
+        <div class="sec-line"></div>
+
+        <div class="ref-block reveal">
+          <div class="ref-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <p class="ref-text">Referencias disponibles a solicitud.</p>
+        </div>
+
       </div>
     </section>
 
   </main>
 
-  <!-- ============ FOOTER ============ -->
+  <!-- ══════════════════ FOOTER ══════════════════ -->
   <footer class="footer">
     <div class="footer__inner">
-      <div class="footer__logos">
-        <img src="UNIV_LOGO.png" alt="Logo Universidad San Francisco Xavier de Chuquisaca" class="footer__logo" />
-        <img src="CIC_LOGO.png" alt="Logo CIC Ciencias de la Computación" class="footer__logo footer__logo--cic" />
-      </div>
-      <div class="footer__text">
+      <img src="CIC_LOGO.png" alt="CIC — Ingeniería en Ciencias de la Computación" class="footer__logo" />
+      <div class="footer__info">
         <p class="footer__name">Rodrigo Beymar Reyna Chocllu</p>
-        <p class="footer__subject">Técnicas de Estudio y Desarrollo de Habilidades Comunicativas — SHC 100</p>
-        <p class="footer__tutor">Tutora: Martha Chocllu Mamani</p>
+        <p class="footer__sub">Técnicas de Estudio y Desarrollo de Habilidades Comunicativas &mdash; SHC 100</p>
+        <p class="footer__doc">Docente: Ing. Álvaro Calvimontes Cano</p>
       </div>
-      <p class="footer__copy">© 2026 — Trabajo Práctico N° 1</p>
+      <p class="footer__copy">&copy; 2026 &mdash; Trabajo Práctico N.° 1</p>
     </div>
   </footer>
 
