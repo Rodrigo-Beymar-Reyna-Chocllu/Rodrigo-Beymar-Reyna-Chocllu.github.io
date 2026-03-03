@@ -1,13 +1,31 @@
-INSTRUCCIONES PARA SUBIR A GITHUB PAGES
+=========================================================
+  CURRICULUM VITAE — Rodrigo Beymar Reyna Chocllu
+  Trabajo Práctico N° 1 — SHC 100
+  Tutora: Martha Chocllu Mamani
+=========================================================
 
-1. Entra a github.com e inicia sesión.
-2. Crea un nuevo repositorio (por ejemplo: mi-pagina-web).
-3. Sube TODOS los archivos dentro de este ZIP.
-4. Ve a Settings > Pages.
-5. En 'Source' selecciona la rama main y carpeta root.
-6. Guarda y espera unos segundos.
-7. GitHub te dará un enlace público.
-Ese enlace será el que debes entregar.
+ARCHIVOS INCLUIDOS (subir TODOS a la raíz del repositorio):
+  - index.html       → Página principal
+  - style.css        → Estilos
+  - script.js        → Animaciones e interactividad
+  - PHOTO.jpg        → Foto de perfil (circular, a color)
+  - UNIV_LOGO.png    → Logo Universidad San Francisco Xavier
+  - CIC_LOGO.png     → Logo CIC — Ciencias de la Computación
+  - README.txt       → Este archivo
 
-Cuando edites cualquier archivo y lo vuelvas a subir,
-el mismo enlace mostrará la versión actualizada.
+CÓMO PUBLICAR EN GITHUB PAGES:
+  1. Crea un repositorio nuevo en github.com (puede ser privado o público).
+  2. Sube todos los archivos a la RAÍZ del repositorio (no en carpetas).
+  3. Ve a Settings → Pages → selecciona la rama "main" y carpeta "/root".
+  4. GitHub te dará un link del tipo: https://<tu-usuario>.github.io/<repo>
+  5. Ese link es el que entregas en eCampus.
+
+NOTAS:
+  - Si cambias tu foto, reemplaza PHOTO.jpg por el nuevo archivo
+    con el mismo nombre exacto (PHOTO.jpg).
+  - Si algo no carga, verifica que todos los archivos estén en la raíz
+    (mismo nivel que index.html).
+  - El sitio está optimizado para PC/proyector.
+  - Prueba siempre en Google Chrome antes de entregar.
+
+=========================================================
