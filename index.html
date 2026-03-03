@@ -20,52 +20,58 @@
     <div class="hero__glow-l"></div>
     <div class="hero__glow-r"></div>
 
-    <!-- LOGOS: universidad izquierda / CIC derecha -->
-    <div class="hero__topbar">
-      <img src="UNIV_LOGO.jpg"
-           alt="Universidad Mayor Real y Pontificia de San Francisco Xavier de Chuquisaca"
-           class="topbar-logo topbar-logo--univ" />
-      <img src="CIC_LOGO.png"
-           alt="CIC — Ingeniería en Ciencias de la Computación"
-           class="topbar-logo topbar-logo--cic" />
-    </div>
+    <!-- LOGOS: dos paneles grandes, universidad izquierda / CIC derecha -->
+    <div class="hero__logopanels">
 
-    <!-- CUERPO HERO: izquierda = foto+nombre / derecha = decoración -->
-    <div class="hero__body">
-
-      <div class="hero__left">
-        <div class="hero__photowrap">
-          <div class="hero__photoframe">
-            <img src="PHOTO.jpg"
-                 alt="Foto de perfil de Rodrigo Beymar Reyna Chocllu"
-                 class="hero__photo" />
-          </div>
-          <div class="hero__ring"></div>
-          <div class="hero__scan"></div>
+      <div class="logo-panel logo-panel--univ">
+        <div class="logo-panel__inner">
+          <img src="UNIV_LOGO.jpg"
+               alt="Universidad Mayor Real y Pontificia de San Francisco Xavier de Chuquisaca"
+               class="panel-logo panel-logo--univ" />
         </div>
+        <div class="logo-panel__fade logo-panel__fade--r"></div>
+      </div>
 
-        <div class="hero__textblock">
-          <p class="hero__eyebrow">
-            <span class="e-dot"></span>
-            Presentación Personal
-            <span class="e-dot"></span>
-          </p>
-          <h1 class="hero__name">
-            Rodrigo Beymar<br />
-            <em class="hero__name-accent">Reyna Chocllu</em>
-          </h1>
-          <p class="hero__subtitle">
-            Estudiante &mdash; Ingeniería en Ciencias de la Computación
-          </p>
+      <div class="logo-panel logo-panel--cic">
+        <div class="logo-panel__bg" style="background-image:url('TECH_LAPTOP.jpg')"></div>
+        <div class="logo-panel__fade logo-panel__fade--l"></div>
+        <div class="logo-panel__inner">
+          <img src="CIC_LOGO.png"
+               alt="CIC — Ingeniería en Ciencias de la Computación"
+               class="panel-logo panel-logo--cic" />
         </div>
       </div>
 
-      <div class="hero__right" aria-hidden="true">
-        <img src="TECH_LAPTOP.jpg" alt="" class="hero__decoimg" />
-        <div class="hero__decofade"></div>
+    </div><!-- /hero__logopanels -->
+
+    <!-- CUERPO HERO: centrado -->
+    <div class="hero__center">
+
+      <div class="hero__photowrap">
+        <div class="hero__photoframe">
+          <img src="PHOTO.jpg"
+               alt="Foto de perfil de Rodrigo Beymar Reyna Chocllu"
+               class="hero__photo" />
+        </div>
+        <div class="hero__ring"></div>
       </div>
 
-    </div><!-- /hero__body -->
+      <div class="hero__textblock">
+        <p class="hero__eyebrow">
+          <span class="e-dot"></span>
+          Presentación Personal
+          <span class="e-dot"></span>
+        </p>
+        <h1 class="hero__name">
+          Rodrigo Beymar<br />
+          <em class="hero__name-accent">Reyna Chocllu</em>
+        </h1>
+        <p class="hero__subtitle">
+          Estudiante &mdash; Ingeniería en Ciencias de la Computación
+        </p>
+      </div>
+
+    </div><!-- /hero__center -->
   </header>
 
   <!-- ══════════════════ MAIN ══════════════════ -->
@@ -134,7 +140,7 @@
 
             <div class="dato reveal">
               <span class="dato-ico">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
               </span>
               <div>
                 <p class="dato-label">Tutor (madre)</p>
@@ -172,7 +178,7 @@
               <span class="tl-badge tl-badge--on">Universidad — En curso</span>
               <h3 class="tl-title">Ingeniería en Ciencias de la Computación</h3>
               <p class="tl-place">Universidad Mayor Real y Pontificia de San Francisco Xavier de Chuquisaca</p>
-              <p class="tl-desc">Actualmente cursando el primer año. Materia: Técnicas de Estudio y Desarrollo de Habilidades Comunicativas (SHC 100). Docente: Ing. Álvaro Calvimontes Cano.</p>
+              <p class="tl-desc">Actualmente cursando el primer año de la carrera de Ciencias de la Computación.</p>
             </div>
           </div>
 
@@ -287,7 +293,6 @@
           <div class="logro-body">
             <p class="logro-rank">1.er Lugar</p>
             <h3 class="logro-title">Olimpiadas de Geografía</h3>
-            <p class="logro-desc">Reconocimiento académico por desempeño destacado a nivel competitivo.</p>
           </div>
         </div>
       </div>
@@ -328,13 +333,6 @@
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
             </span>
             <p class="hab-text">Manejo intermedio de Word y PowerPoint; Excel a nivel básico / intermedio.</p>
-          </div>
-
-          <div class="hab-row reveal">
-            <span class="hab-ico">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            </span>
-            <p class="hab-text">Capacidad para aprender mediante la observación y la práctica, aplicando soluciones sencillas para diagnosticar fallos.</p>
           </div>
 
         </div>
@@ -382,13 +380,18 @@
   <!-- ══════════════════ FOOTER ══════════════════ -->
   <footer class="footer">
     <div class="footer__inner">
-      <img src="CIC_LOGO.png" alt="CIC — Ingeniería en Ciencias de la Computación" class="footer__logo" />
+      <img src="UNIV_LOGO.jpg"
+           alt="Universidad Mayor Real y Pontificia de San Francisco Xavier de Chuquisaca"
+           class="footer__logo footer__logo--univ" />
       <div class="footer__info">
         <p class="footer__name">Rodrigo Beymar Reyna Chocllu</p>
         <p class="footer__sub">Técnicas de Estudio y Desarrollo de Habilidades Comunicativas &mdash; SHC 100</p>
         <p class="footer__doc">Docente: Ing. Álvaro Calvimontes Cano</p>
+        <p class="footer__copy">&copy; 2026 &mdash; Trabajo Práctico N.° 1</p>
       </div>
-      <p class="footer__copy">&copy; 2026 &mdash; Trabajo Práctico N.° 1</p>
+      <img src="CIC_LOGO.png"
+           alt="CIC — Ingeniería en Ciencias de la Computación"
+           class="footer__logo footer__logo--cic" />
     </div>
   </footer>
 

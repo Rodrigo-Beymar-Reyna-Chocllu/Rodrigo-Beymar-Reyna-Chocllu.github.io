@@ -78,7 +78,7 @@ img { display:block; max-width:100%; }
   mask-image: radial-gradient(ellipse 80% 80% at 50% 50%,#000 40%,transparent 100%);
 }
 
-/* brillos de fondo */
+/* brillos */
 .hero__glow-l {
   position:absolute; left:-180px; top:40%;
   width:500px; height:500px;
@@ -92,58 +92,110 @@ img { display:block; max-width:100%; }
   pointer-events:none; z-index:1;
 }
 
-/* ── barra de logos ── */
-.hero__topbar {
+/* ── PANELES DE LOGOS (arriba, mitad/mitad, grandes) ── */
+.hero__logopanels {
   position: relative;
   z-index: 3;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 22px 48px;
-  background: rgba(1,14,32,0.55);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(0,200,255,.14);
+  width: 100%;
+  height: 260px;            /* altura generosa para que se vean bien */
+  border-bottom: 1px solid rgba(0,200,255,.18);
   animation: fadeDown .9s var(--ease) both;
 }
 
-.topbar-logo {
-  object-fit: contain;
-  filter: drop-shadow(0 0 10px rgba(0,200,255,.3));
-}
-.topbar-logo--univ {
-  height: 64px;
-  /* fondo negro del logo — recorte suave */
-  border-radius: 6px;
-  background: transparent;
-}
-.topbar-logo--cic  {
-  height: 52px;
-  background: rgba(255,255,255,.04);
-  border-radius: 8px;
-  padding: 4px 10px;
+.logo-panel {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 36px;
+  overflow: hidden;
 }
 
-/* ── cuerpo hero ── */
-.hero__body {
+/* panel universidad: fondo oscuro semitransparente */
+.logo-panel--univ {
+  background: rgba(1,10,25,0.72);
+  border-right: 1px solid rgba(0,200,255,.15);
+}
+
+/* panel CIC: imagen de fondo tech */
+.logo-panel--cic {
+  background: rgba(2,15,40,0.85);
+}
+.logo-panel__bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: .22;
+  z-index: 0;
+}
+
+/* fade entre los dos paneles */
+.logo-panel__fade {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 80px;
+  z-index: 1;
+  pointer-events: none;
+}
+.logo-panel__fade--r {
+  right: 0;
+  background: linear-gradient(to right, transparent, rgba(1,10,25,0.7));
+}
+.logo-panel__fade--l {
+  left: 0;
+  background: linear-gradient(to left, transparent, rgba(2,15,40,0.7));
+}
+
+.logo-panel__inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.panel-logo {
+  object-fit: contain;
+  max-height: 100%;
+  max-width: 100%;
+  filter: drop-shadow(0 0 14px rgba(0,200,255,.4));
+  transition: filter .4s, transform .4s;
+}
+.panel-logo:hover {
+  filter: drop-shadow(0 0 28px rgba(0,200,255,.75));
+  transform: scale(1.03);
+}
+/* el logo de universidad (jpg con fondo negro): lo mostramos tal cual, grande */
+.panel-logo--univ {
+  max-height: 200px;
+  max-width: 90%;
+}
+/* el logo CIC (png) */
+.panel-logo--cic {
+  max-height: 180px;
+  max-width: 85%;
+  background: rgba(255,255,255,.04);
+  border-radius: 12px;
+  padding: 8px 16px;
+}
+
+/* ── CONTENIDO CENTRAL (foto + nombre) ── */
+.hero__center {
   position: relative;
   z-index: 2;
   flex: 1;
   display: flex;
-  align-items: center;
-  padding: 0;
-  min-height: calc(100vh - 108px);
-}
-
-/* mitad izquierda */
-.hero__left {
-  flex: 0 0 52%;
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 36px;
-  padding: 60px 48px 60px 80px;
-  animation: fadeUp .9s var(--ease) .25s both;
+  padding: 52px 40px 60px;
+  gap: 28px;
+  animation: fadeUp .9s var(--ease) .3s both;
 }
 
 /* foto hero */
@@ -192,21 +244,10 @@ img { display:block; max-width:100%; }
   z-index: 1;
 }
 
-/* línea de escaneo */
-.hero__scan {
-  position: absolute;
-  left: -10px; right: -10px;
-  height: 2px;
-  background: linear-gradient(90deg,transparent,var(--cyan),transparent);
-  animation: scanY 2.8s ease-in-out infinite;
-  z-index: 3;
-  top: 0;
-}
-
-/* texto hero */
+/* texto hero — centrado */
 .hero__textblock {
   text-align: center;
-  max-width: 480px;
+  max-width: 560px;
 }
 .hero__eyebrow {
   display: flex;
@@ -229,7 +270,7 @@ img { display:block; max-width:100%; }
 }
 .hero__name {
   font-family: var(--font-h);
-  font-size: clamp(2rem,4.5vw,3.2rem);
+  font-size: clamp(2.2rem,5vw,3.6rem);
   font-weight: 900;
   line-height: 1.1;
   color: var(--white);
@@ -242,36 +283,14 @@ img { display:block; max-width:100%; }
   text-shadow: 0 0 22px rgba(0,200,255,.6);
 }
 .hero__subtitle {
-  font-size: 1.05rem;
+  display: inline-block;
+  font-size: 1.08rem;
   font-weight: 300;
   color: var(--white-dim);
   border-left: 3px solid var(--cyan);
   padding-left: 14px;
   text-align: left;
   letter-spacing: .04em;
-}
-
-/* mitad derecha: decoración */
-.hero__right {
-  flex: 0 0 48%;
-  position: relative;
-  height: calc(100vh - 108px);
-  overflow: hidden;
-}
-.hero__decoimg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  opacity: .35;
-  transition: opacity .4s;
-}
-.hero__decofade {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(to right, var(--navy) 0%, transparent 40%),
-    linear-gradient(to top,   var(--navy) 0%, transparent 30%);
 }
 
 /* ═══════════════════════════════════════════════
@@ -769,42 +788,59 @@ img { display:block; max-width:100%; }
   z-index: 1;
   background: linear-gradient(180deg, var(--navy) 0%, #010810 100%);
   border-top: 1px solid rgba(0,200,255,.14);
-  padding: 52px 40px 36px;
+  padding: 52px 48px 36px;
 }
 .footer__inner {
-  max-width: 980px;
+  max-width: 1100px;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 18px;
-  text-align: center;
+  justify-content: space-between;
+  gap: 32px;
 }
 .footer__logo {
-  height: 50px;
-  width: auto;
   object-fit: contain;
-  filter: brightness(.75) drop-shadow(0 0 8px rgba(0,200,255,.2));
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 10px rgba(0,200,255,.25));
+  transition: filter .3s, transform .3s;
+}
+.footer__logo:hover {
+  filter: drop-shadow(0 0 22px rgba(0,200,255,.55));
+  transform: scale(1.03);
+}
+.footer__logo--univ {
+  height: 110px;
+  max-width: 320px;
+}
+.footer__logo--cic {
+  height: 90px;
+  max-width: 260px;
   background: rgba(255,255,255,.04);
-  border-radius: 8px;
-  padding: 4px 8px;
+  border-radius: 10px;
+  padding: 6px 12px;
+}
+.footer__info {
+  text-align: center;
+  flex: 1;
 }
 .footer__name {
   font-family: var(--font-h);
-  font-size: .95rem;
+  font-size: 1rem;
   color: var(--white);
+  margin-bottom: 6px;
 }
 .footer__sub,
 .footer__doc {
   font-size: .83rem;
   color: var(--white-dim);
+  line-height: 1.6;
 }
 .footer__copy {
   font-family: var(--font-h);
   font-size: .55rem;
   letter-spacing: .2em;
   color: rgba(0,200,255,.28);
-  margin-top: 6px;
+  margin-top: 10px;
 }
 
 /* ═══════════════════════════════════════════════
@@ -837,16 +873,15 @@ img { display:block; max-width:100%; }
 }
 
 /* ═══════════════════════════════════════════════
-   RESPONSIVE (mínimo para que no se quiebre en móvil)
+   RESPONSIVE
 ═══════════════════════════════════════════════ */
 @media (max-width: 900px) {
-  .hero__topbar { padding:16px 24px; }
-  .topbar-logo--univ { height:50px; }
-  .topbar-logo--cic  { height:42px; }
+  .hero__logopanels { height: 160px; }
+  .panel-logo--univ { max-height: 130px; }
+  .panel-logo--cic  { max-height: 110px; }
 
-  .hero__body { flex-direction:column; min-height:unset; }
-  .hero__left  { flex:none; padding:48px 24px 32px; width:100%; }
-  .hero__right { flex:none; width:100%; height:200px; }
+  .hero__center { padding: 36px 20px 48px; }
+  .hero__photoframe { width: 160px; height: 160px; }
 
   .inner--sidebyside  { flex-direction:column; gap:32px; }
   .inner--rev         { flex-direction:column; }
@@ -857,5 +892,12 @@ img { display:block; max-width:100%; }
   .cv-sec { padding:70px 24px; }
   .motiv-block { padding:30px 26px; }
 
-  .hero__photoframe { width:160px; height:160px; }
+  .footer__inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+  .footer__logo--univ { height: 70px; }
+  .footer__logo--cic  { height: 58px; }
 }
